@@ -65,6 +65,34 @@ module.exports.connections = {
     // database: 'your_mongo_db_name_here'
   },
 
+
+  remoteMongolabServer: {
+      adapter: 'sails-mongo',
+      host: 'ds054118.mongolab.com',
+      port: 54118,
+      user: 'webserver2',
+      password: '123456password',
+      database: 'prototype-ecommerce'
+  },
+
+  mongoLabServer: {
+      adapter: 'sails-mongo',
+      host: 'ds040888.mongolab.com',
+      port: 40888,
+      user: 'root',
+      password: 'password',
+      database: 'dbprototype'
+    },
+
+    localMongoServer: {
+        adapter: 'sails-mongo',
+        host: 'localhost',
+        port: 27017,
+        // user: 'username',
+        // password: 'password',
+        // database: 'your_mongo_db_name_here'
+    },
+
   /***************************************************************************
   *                                                                          *
   * PostgreSQL is another officially supported relational database.          *
