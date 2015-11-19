@@ -16,7 +16,7 @@ getHomepage: function(req, res) {
 		var categoryRepository = RequireService.frontRepository('category');
 
 		categoryRepository.getTopCategories(function(topCategories) {
-			return res.view('HomePage', {
+			return res.view('homepage', {
 				locals : {
 					topCategories 		: topCategories
 				}
