@@ -14,6 +14,8 @@ module.exports = {
 		// get URL
 		var url = req.path;
 
+		console.log(url);
+
 		// skip slash
 		url = url.substring(1);
 
