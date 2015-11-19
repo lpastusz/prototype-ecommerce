@@ -1,1 +1,10 @@
-<h1>List produktu</h1>
+<div id="page-product-list" class="main-center">
+
+    <h1><%= locals.category.name %></h1>
+
+
+    <%- partial('ProductListComponents/SubcategoryList.ejs') %>
+
+    <%- partial('ProductListComponents/ProductList.ejs') %>
+
+</div>

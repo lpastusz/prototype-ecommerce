@@ -1,0 +1,13 @@
+<section class="sec-sub-categories">
+
+        <% _.each(locals.subcategories, function (category) { %>
+
+            <a class="cat-single" href='<%= category.url.value %>'>
+                    <%= category.name %>
+            </a>
+
+        <% }) %>
+
+        <div class='clear'></div>
+
+</section>

@@ -33,5 +33,15 @@ module.exports = {
             via: 'products',
             dominant: true
         },
+
+        price: {
+            type:       'float',
+            required:   true
+        },
+
+        mainImage: {
+            type: 'json',
+            required: true
+        }
   }
 };

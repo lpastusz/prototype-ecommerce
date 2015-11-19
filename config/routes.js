@@ -22,9 +22,9 @@
 
 module.exports.routes = {
 
-    '/': {
-      view: 'HomePage'
-    },
+    'GET /': 'HomepageController.getHomepage',
+
+    'GET /api/getProducts/:query' : 'SearchController.getProductsByQuery',
 
     'GET *': {
         controller: 'RouterController',

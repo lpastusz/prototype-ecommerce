@@ -1,0 +1,33 @@
+@import "_import.scss";
+
+@media screen and (max-width: 767px) {
+    #page-product-list .sec-sub-categories
+    {
+        margin-left: -3%;
+        margin-right: -3%;
+        .cat-single
+        {
+            margin: 3%;
+            width: 44%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    #page-product-detail
+    {
+        .detail-col-left
+        {
+            width: auto;
+            margin-bottom: 30px;
+            float: none;
+        }
+        .detail-col-right
+        {
+            width: auto;
+            margin-bottom: 30px;
+            float: none;
+        }
+    }
+}

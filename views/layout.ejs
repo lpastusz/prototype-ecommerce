@@ -11,21 +11,26 @@
     <meta name="author" content="Lukas Pastuszek, lukas.pastuszek@gmail.com">
 
 
-    <!--STYLES-->
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
+    <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/styles/base_classes.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/main_responsive.css">
   </head>
 
   <body>
 
         <%- partial('LayoutPartial/ClassicHeader.ejs') %>
 
-        <%- body %>
+        <div id="page-content">
+            <%- body %>
+        </div>
 
         <%- partial('LayoutPartial/ClassicFooter.ejs') %>
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/jquery-1.11.3.min.js"></script>
+    <script src="/js/ajaxSearch.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

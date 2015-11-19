@@ -1,1 +1,48 @@
-<h1>Detail produktu</h1>
+<div id="page-product-detail" class="main-center">
+
+    <div class='detail-col-left no-margin'>
+
+        <h1><%= locals.product.name %></h1>
+
+    </div>
+
+    <div class='detail-col-right'>
+
+        <div class="main-image">
+
+            <img src="<%= locals.product.mainImage.src %>" alt="<%= locals.product.name %>" />
+
+        </div>
+
+    </div>
+
+
+    <div class='detail-col-left'>
+
+        <div class='description'>
+
+            <%= locals.product.description %>
+
+        </div>
+
+        <div class='row'>
+            <div class='title'>Stock info: </div>
+            <div class='stock'>
+                <% if (locals.product.inStock) { %>
+                    <span class='green'>in stock</span>
+                <% } else { %>
+                    not in stock
+                <% } %>
+            </div>
+            <div class='clear'></div>
+        </div>
+
+
+        <div class='price'>$ <%= locals.product.price %></div>
+
+        <div class='clear'></div>
+
+    </div>
+
+
+</div>

@@ -1,1 +1,23 @@
-<h1>Homepage</h1>
+<div id="page-homepage" class="main-center">
+
+    <section class="sec-search">
+        <h1>What would you like to buy?</h1>
+
+        <form id="JS_main_search_row_form">
+            <div class="input-row">
+                <input id="JS_main_search_row" type="text" autocomplete="off" placeholder="Type what you need..." />
+            </div>
+        </form>
+
+    </section>
+
+    <section id="JS_search_result" class='sec-search-result product-list'>
+
+    </section>
+
+
+    <section id="JS_homepage_content">
+        <%- partial('HomepageComponents/CategoryList.ejs') %>
+    </section>
+
+</div>

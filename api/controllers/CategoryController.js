@@ -16,31 +16,20 @@ module.exports = {
 
 		categoryRepository.getTopCategories(function(topCategories) {
 
-			categoryRepository.getCategoryWithProducts(categoryId, function(category, products) {
+			categoryRepository.getCategoryWithSubcategoriesAndProducts(categoryId, function(category, subcategories, products) {
 				if (category == null) { return res.view('404'); }
 
-				console.log(products);
 
 				return res.view('ProductListPage', {
 					locals : {
-						topCategories 		: topCategories,
-						currentCategory 	: category,
+						category 			: category,
+						subcategories       : subcategories,
 						products 			: products
 					}
 				});
 
 			});
 
-
-				// show view with data
-
 		});
-
-
-/*
-		DumpService.assignProductToCategory("Green lens", "Healthy food", function() {
-			res.ok();
-		});
-*/
 	}
 };

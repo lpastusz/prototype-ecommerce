@@ -1,0 +1,161 @@
+@import "compass/css3";
+
+$default-text-size: 16;
+
+@mixin resetTable {
+  border-collapse: collapse;
+  padding: 0;
+  margin: 0;
+  font-size:100%;
+  thead, th
+  {
+      text-align: left;
+      vertical-align: middle;
+  }
+}
+
+@mixin resetList{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin resetButton{
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    &:focus
+    {
+        outline: none;
+        cursor: pointer;
+    }
+    &:hover
+    {
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+@mixin inputHeight($height:30)
+{
+  height:$height+ px;
+  line-height:$height + px\9 !important;
+}
+
+
+@mixin a($color,$colorHover:false, $underline:false)
+{
+  color:$color;
+  @if $underline == hoverUnderline {
+    text-decoration: none;
+  }
+  @else if $underline == underline{
+    text-decoration: underline;
+  }
+  @else {
+      text-decoration: none;
+  }
+  &:focus{
+      color: $color;
+  }
+  &:active{
+      color: $color;
+  }
+  &:hover{
+    @if $colorHover{
+      color:$colorHover;
+    }
+
+    @if $underline == hoverUnderline{
+      text-decoration: underline;
+    }
+    @else{
+      text-decoration: none;
+    }
+
+  }
+
+}
+
+@mixin bg-color($color, $hoverColor:false)
+{
+    background-color: $color;
+    @if $hoverColor != false {
+        &:hover
+        {
+            background-color: $hoverColor;
+        }
+    }
+}
+
+@mixin background-rgba($red: 0, $green: 0, $blue: 0, $alpha: 0.5){
+    background-color: rgb($red, $green, $blue);
+    background-color: rgba($red, $green, $blue, $alpha);
+    @if ($legacy-support-for-ie) {
+        @include has-layout;
+        background-color: transparent\9; $color: rgba($red, $green, $blue, $alpha);
+        @include filter-gradient($color, $color);
+    }
+}
+
+
+@mixin box-sizing($value)
+{
+    -webkit-box-sizing: $value;
+    -moz-box-sizing: $value;
+    box-sizing: $value;
+}
+
+@mixin font-family($value)
+{
+    // specialized font families
+		@if ($value == Montserrat)
+		{
+			font-family: Montserrat, 'Open Sans', Roboto, Verdana, sans-serif;
+		}
+    @else if ($value == Open Sans)
+    {
+        font-family: 'Open Sans', Roboto, Verdana, sans-serif;
+    }
+    //default font-family
+    @else
+    {
+        font-family: 'Open Sans', Roboto, Verdana, sans-serif;
+    }
+
+}
+
+
+@mixin font-size($value, $parentValue: $default-text-size)
+{
+	font-size: percentage($value / $default-text-size);
+}
+
+@mixin transition($prop1, $time1, $type1, $prop2:false, $time2:false, $type2:false, $prop3:false, $time3:false, $type3:false)
+{
+    @if $prop3 != false {
+        -webkit-transition: $prop1 $time1 $type1, $prop2 $time2 $type2, $prop3 $time3 $type3;
+        -moz-transition: $prop1 $time1 $type1, $prop2 $time2 $type2, $prop3 $time3 $type3;
+        -o-transition: $prop1 $time1 $type1, $prop2 $time2 $type2, $prop3 $time3 $type3;
+        -ms-transition: $prop1 $time1 $type1, $prop2 $time2 $type2, $prop3 $time3 $type3;
+        transition: $prop1 $time1 $type1, $prop2 $time2 $type2, $prop3 $time3 $type3;
+    }
+    @elseif $prop2 != false {
+        -webkit-transition: $prop1 $time1 $type1, $prop2 $time2 $type2;
+        -moz-transition: $prop1 $time1 $type1, $prop2 $time2 $type2;
+        -o-transition: $prop1 $time1 $type1, $prop2 $time2 $type2;
+        -ms-transition: $prop1 $time1 $type1, $prop2 $time2 $type2;
+        transition: $prop1 $time1 $type1, $prop2 $time2 $type2;
+    }
+    @else  {
+        -webkit-transition: $prop1 $time1 $type1;
+        -moz-transition: $prop1 $time1 $type1;
+        -o-transition: $prop1 $time1 $type1;
+        -ms-transition: $prop1 $time1 $type1;
+        transition: $prop1 $time1 $type1;
+    }
+}

@@ -12,6 +12,15 @@ module.exports = {
             callback(resultProduct);
         });
 
+    },
+
+    getProductsByQuery: function(queryString, callback) {
+        Product.find({
+            name: { 'contains': queryString }
+        }).populate('url').exec(function(err, resultProducts) {
+            if (err || !resultProducts) callback();
+            callback(resultProducts);
+        });
     }
 
 }
